@@ -20,17 +20,48 @@ export const MapPage = () => {
     },
   });
 
-  console.log(metros);
+  const { data: disctricts } = useQuery({
+    queryKey: ["disctricts"],
+    queryFn: async () => {
+      const result = await axios.get("/api/district.json");
+      return result.data;
+    },
+  });
+
+  const { data: streets } = useQuery({
+    queryKey: ["streets"],
+    queryFn: async () => {
+      const result = await axios.get("/api/streets.json");
+      return result.data;
+    },
+  });
 
   const layers = [
+    new GeoJsonLayer({
+      id: "district-layer",
+      data: disctricts,
+      pickable: true,
+      pointType: "circle",
+      getFillColor: [59, 130, 246, 60],
+      getLineColor: [37, 99, 235, 180],
+      lineWidthMinPixels: 1,
+    }),
+    new GeoJsonLayer({
+      id: "streets-layer",
+      data: streets,
+      pickable: true,
+      pointType: "circle",
+      getLineColor: [75, 85, 99, 180],
+      lineWidthMinPixels: 1,
+    }),
     new GeoJsonLayer({
       id: "metro-layer",
       data: metros,
       pickable: true,
       pointType: "circle",
-      getPointRadius: 50,
-      getFillColor: [255, 0, 0, 180],
-      getLineColor: [0, 0, 0, 200],
+      getPointRadius: 20,
+      getFillColor: [234, 88, 12, 220], // оранжевый
+      getLineColor: [255, 255, 255, 255],
       lineWidthMinPixels: 1,
     }),
   ];
