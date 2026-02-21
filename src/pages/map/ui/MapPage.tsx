@@ -60,7 +60,7 @@ export const MapPage = () => {
       pickable: true,
       pointType: "circle",
       getPointRadius: 20,
-      getFillColor: [234, 88, 12, 220], // оранжевый
+      getFillColor: [234, 88, 12, 220], 
       getLineColor: [255, 255, 255, 255],
       lineWidthMinPixels: 1,
     }),

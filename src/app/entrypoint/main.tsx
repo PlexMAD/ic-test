@@ -1,4 +1,4 @@
-import { MapPage } from "@/pages/map-temp";
+import { MapPage } from "@/pages/map";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRoot } from "react-dom/client";
 import "../styles/index.css";
