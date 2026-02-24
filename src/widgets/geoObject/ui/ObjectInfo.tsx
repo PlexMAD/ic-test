@@ -1,18 +1,27 @@
-import { Button } from "@/shared/ui/button";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerHeader,
-} from "@/shared/ui/drawer";
+  updateGeoObjectInfo,
+  useGeoObjectInfo,
+} from "../store/useGeoObjectInfoStore";
+import { StationInfo } from "./StationInfo";
+import { Button, Drawer, DrawerClose, DrawerContent } from "@/shared";
 
 export const ObjectInfo = () => {
+  const data = useGeoObjectInfo();
+
   return (
-    <Drawer direction="right">
+    <Drawer
+      direction="right"
+      open={!!data}
+      onOpenChange={(open) => {
+        if (!open) updateGeoObjectInfo(null);
+      }}
+    >
       <DrawerContent>
-        <DrawerHeader>Дровер</DrawerHeader>
+        {data?.kind === "train" && <StationInfo data={data.info} />}
         <DrawerClose asChild>
-          <Button variant="outline">Cancel</Button>
+          <Button variant="outline" className="w-30 mx-auto">
+            Закрыть
+          </Button>
         </DrawerClose>
       </DrawerContent>
     </Drawer>

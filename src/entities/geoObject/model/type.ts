@@ -46,9 +46,11 @@ export type TrainProperties = {
   no_line: string;
   type: "М" | "МЦК" | "МЦД";
   status: "Действующая" | "Планируемая";
-  transfer: boolean;
+  transfer: "true" | "false" | "TRUE" | "FALSE";
   administrative_district: AdministrativeDistrictName;
   area: DistrictName;
+  latitude: number;
+  longitude: number;
 } & TransportProperties;
 
 export type BusProperties = {

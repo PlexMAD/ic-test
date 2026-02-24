@@ -5,4 +5,4 @@ export type {
   TrainProperties,
 } from "./model/type";
 
-export { disctrictsQuery, metroQuery, streetsQuery } from "./api/queries";
+export { disctrictsQuery, metroQuery, streetsQuery, mckQuery, mcdQuery } from "./api/queries";
