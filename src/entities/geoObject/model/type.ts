@@ -1,15 +1,8 @@
-type GeoObjectBase<T extends object> = {
-  name: string;
-  features: {
-    properties: T;
-  }[];
-};
-
 type DistrictName = string;
 
 type AdministrativeDistrictName = string;
 
-type DistrictProperties = {
+export type DistrictProperties = {
   NAME: DistrictName;
   NAME_AO: AdministrativeDistrictName;
 };
@@ -47,7 +40,7 @@ type TransportProperties = {
   CurLdRel: string;
 };
 
-type TrainProperties = {
+export type TrainProperties = {
   name_station: string;
   name_line: string;
   no_line: string;
@@ -58,7 +51,7 @@ type TrainProperties = {
   area: DistrictName;
 } & TransportProperties;
 
-type BusProperties = {
+export type BusProperties = {
   name_mpv: string;
   rayon: DistrictName;
   ao: AdministrativeDistrictName;
@@ -76,7 +69,7 @@ type RoadDirection = "T" | "F" | "Any";
 type IsFerryFlag = "T" | "F";
 type TypeLink = "Обычное звено";
 
-type StreetProperties = {
+export type StreetProperties = {
   EdgeId: number;
   ST_NAME: string | null;
   ST_TYP_BEF?: string;
@@ -102,11 +95,3 @@ type StreetProperties = {
   Foot: 0 | 1;
   Car: 0 | 1;
 };
-
-export type DisctrictObject = GeoObjectBase<DistrictProperties>;
-
-export type TrainObject = GeoObjectBase<TrainProperties>;
-
-export type BusObject = GeoObjectBase<BusProperties>;
-
-export type StreetObject = GeoObjectBase<StreetProperties>;
