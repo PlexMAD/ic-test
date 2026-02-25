@@ -88,7 +88,7 @@ export type StreetProperties = {
   Width: number | null;
   IsFerry: IsFerryFlag;
   Style: number;
-  U_TURN: number;
+  U_TURN: 0 | 3;
   OriginId: string;
   MaxSpdDrct: number;
   AvgSpdDrct: number;

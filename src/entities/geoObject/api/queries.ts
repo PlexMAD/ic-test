@@ -39,3 +39,11 @@ export const streetsQuery = {
     return result.data;
   },
 };
+
+export const busQuery = {
+  queryKey: ["bus"],
+  queryFn: async () => {
+    const result = await axios.get("/api/stops.json");
+    return result.data;
+  },
+};

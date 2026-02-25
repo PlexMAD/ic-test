@@ -6,7 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const formatStringBool = (
-  value: "true" | "false" | "TRUE" | "FALSE"
+  value: "true" | "false" | "TRUE" | "FALSE" | 1 | 0 | 3
 ) => {
+  if (typeof value === "number") {
+    return value !== 0 ? "Да" : "Нет";
+  }
+
   return value.toLowerCase() === "true" ? "Да" : "Нет";
 };

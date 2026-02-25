@@ -46,7 +46,8 @@ export const StationInfo = ({ data }: { data: TrainProperties }) => {
 
             <div className="text-muted-foreground">Координаты</div>
             <div className="text-right font-mono">
-              {data.latitude}, {data.longitude}
+              <p>Широта: {data.latitude}</p>
+              <p>Долгота: {data.longitude}</p>
             </div>
           </div>
         </section>
