@@ -21,8 +21,8 @@ export const BusInfo = ({ data }: { data: BusProperties }) => {
 
         <div className="text-muted-foreground">Координаты</div>
         <div className="text-right font-mono">
-          <p>Широта: {data.x}</p>
-          <p>Долгота: {data.y}</p>
+          <p>Долгота: {data.x}</p>
+          <p>Широта: {data.y}</p>
         </div>
       </div>
     </div>

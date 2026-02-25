@@ -1,4 +1,7 @@
-export { updateGeoObjectInfo, useGeoObjectInfo } from "./geo-object-info/store/useGeoObjectInfoStore";
+export {
+  updateGeoObjectInfo,
+  useGeoObjectInfo,
+} from "./geo-object-info/store/useGeoObjectInfoStore";
 
 export {
   cancelAdding,
@@ -8,9 +11,13 @@ export {
   placeAt,
   removePoint,
   startAdding,
-} from "./add-geo-point/store/actions"
-export { useAddDraft, useAddMode, useUserPoints } from "./add-geo-point/store/selectors";
+} from "./add-geo-point/store/actions";
+export {
+  useAddDraft,
+  useAddMode,
+  useUserPoints,
+} from "./add-geo-point/store/selectors";
 
 export type { AddBusDraft, AddTrainDraft } from "./add-geo-point/model/type";
 
-
+export { AddGeoPointButton } from "./add-geo-point/ui/AddGeoPointButton";
