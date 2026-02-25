@@ -1,4 +1,4 @@
-import type { StreetProperties } from "@/entities/geoObject";
+import type { StreetProperties } from "@/entities";
 import { DrawerHeader, DrawerTitle, formatStringBool } from "@/shared";
 
 export const StreetInfo = ({ data }: { data: StreetProperties }) => {

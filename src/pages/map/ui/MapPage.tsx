@@ -5,13 +5,13 @@ import {
   mckQuery,
   metroQuery,
   streetsQuery,
-} from "@/entities/geoObject";
-import { ObjectInfo } from "@/widgets/geoObject";
+} from "@/entities";
 import { DeckGL } from "@deck.gl/react";
 import { useQueries } from "@tanstack/react-query";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Map } from "react-map-gl/maplibre";
 import { buildMapLayers } from "../model/layers";
+import { ObjectInfo } from "@/widgets";
 
 const INITIAL_VIEW_STATE = {
   longitude: 37.6176,

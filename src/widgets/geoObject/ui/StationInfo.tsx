@@ -1,4 +1,4 @@
-import type { TrainProperties } from "@/entities/geoObject";
+import type { TrainProperties } from "@/entities";
 import { DrawerHeader, DrawerTitle, formatStringBool } from "@/shared";
 
 export const StationInfo = ({ data }: { data: TrainProperties }) => {

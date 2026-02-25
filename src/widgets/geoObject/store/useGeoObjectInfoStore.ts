@@ -19,13 +19,13 @@ const GeoObjectInfoStore: StateCreator<
     ),
 });
 
-
 const useGeoObjectInfoStore = create<GeoObjectInfoStoreType>()(
   devtools(GeoObjectInfoStore),
 );
 
 export const useGeoObjectInfo = () =>
   useGeoObjectInfoStore((state) => state.geoObjectInfo);
+
 export const updateGeoObjectInfo = (
   geoObjectInfo: GeoObjectInfoState["geoObjectInfo"],
 ) => useGeoObjectInfoStore.getState().updateGeoObjectInfo(geoObjectInfo);

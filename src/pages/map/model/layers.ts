@@ -1,5 +1,5 @@
 // src/pages/map/model/layers.ts
-import { updateGeoObjectInfo } from "@/widgets/geoObject";
+import { updateGeoObjectInfo } from "@/widgets";
 import type { Layer } from "@deck.gl/core";
 import { GeoJsonLayer } from "@deck.gl/layers";
 

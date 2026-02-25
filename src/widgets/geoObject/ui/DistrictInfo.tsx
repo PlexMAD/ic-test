@@ -1,4 +1,4 @@
-import type { DistrictProperties } from "@/entities/geoObject";
+import type { DistrictProperties } from "@/entities";
 import { DrawerHeader, DrawerTitle } from "@/shared";
 
 export const DistrictInfo = ({ data }: { data: DistrictProperties }) => {

@@ -3,7 +3,7 @@ import type {
   DistrictProperties,
   StreetProperties,
   TrainProperties,
-} from "@/entities/geoObject";
+} from "@/entities";
 
 type GeoObjectInfo =
   | { kind: "bus"; info: BusProperties }

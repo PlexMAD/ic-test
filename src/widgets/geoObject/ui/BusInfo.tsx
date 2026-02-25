@@ -1,4 +1,4 @@
-import type { BusProperties } from "@/entities/geoObject";
+import type { BusProperties } from "@/entities";
 
 export const BusInfo = ({ data }: { data: BusProperties }) => {
   return (
