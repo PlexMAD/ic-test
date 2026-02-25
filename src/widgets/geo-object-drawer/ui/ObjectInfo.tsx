@@ -1,8 +1,6 @@
 import { Button, Drawer, DrawerClose, DrawerContent } from "@/shared";
-import {
-  updateGeoObjectInfo,
-  useGeoObjectInfo,
-} from "../store/useGeoObjectInfoStore";
+
+import { updateGeoObjectInfo, useGeoObjectInfo } from "@/features";
 import { BusInfo } from "./BusInfo";
 import { DistrictInfo } from "./DistrictInfo";
 import { StationInfo } from "./StationInfo";

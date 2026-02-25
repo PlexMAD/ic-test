@@ -3,7 +3,7 @@ export type {
   DistrictProperties,
   StreetProperties,
   TrainProperties,
-} from "./geoObject/model/type";
+} from "./geo-object/model/type";
 
 export {
   busQuery,
@@ -12,4 +12,4 @@ export {
   mckQuery,
   metroQuery,
   streetsQuery,
-} from "./geoObject/api/queries";
+} from "./geo-object/api/queries";
