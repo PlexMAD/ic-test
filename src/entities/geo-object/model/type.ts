@@ -32,10 +32,6 @@ type TransportProperties = {
   AvgNewLdBT: string;
   PaintPoint: boolean;
   AvlbOnFoot: boolean;
-
-  fid: number;
-  icon: string;
-
   CurLd: string;
   CurLdRel: string;
 };
@@ -61,10 +57,6 @@ export type BusProperties = {
   y: string;
   x: string;
   marshrut: string;
-  in_date: number;
-  off_date: number;
-  iconWidth: number;
-  iconHeight: number;
 } & TransportProperties;
 
 type RoadDirection = "T" | "F" | "Any";

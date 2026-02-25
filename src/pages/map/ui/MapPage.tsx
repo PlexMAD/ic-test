@@ -6,12 +6,13 @@ import {
   metroQuery,
   streetsQuery,
 } from "@/entities";
+import { placeAt, useAddMode } from "@/features";
+import { ObjectInfo } from "@/widgets";
 import { DeckGL } from "@deck.gl/react";
 import { useQueries } from "@tanstack/react-query";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Map } from "react-map-gl/maplibre";
 import { buildMapLayers } from "../model/layers";
-import { ObjectInfo } from "@/widgets";
 
 const INITIAL_VIEW_STATE = {
   longitude: 37.6176,
@@ -33,11 +34,31 @@ export const MapPage = () => {
 
   const [disctricts, streets, metro, mck, mcd, bus] = data.map((d) => d.data);
 
-  const layers = buildMapLayers({ disctricts, streets, metro, mck, mcd, bus });
+  const addMode = useAddMode();
+
+  const layers = buildMapLayers({
+    disctricts,
+    streets,
+    metro,
+    mck,
+    mcd,
+    bus,
+    isPlacing: addMode === "placing",
+  });
 
   return (
     <div style={{ height: "100vh" }}>
-      <DeckGL initialViewState={INITIAL_VIEW_STATE} controller layers={layers}>
+      <DeckGL
+        initialViewState={INITIAL_VIEW_STATE}
+        controller
+        layers={layers}
+        onClick={(info) => {
+          if (addMode !== "placing") return;
+          const c = info?.coordinate;
+          if (!c) return;
+          placeAt(c[0], c[1]);
+        }}
+      >
         <Map mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json" />
         <ObjectInfo />
       </DeckGL>

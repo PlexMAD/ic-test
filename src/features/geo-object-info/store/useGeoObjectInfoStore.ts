@@ -15,7 +15,7 @@ const GeoObjectInfoStore: StateCreator<
         geoObjectInfo,
       }),
       false,
-      "updateGeoInfo",
+      "geo-info/updateGeoInfo",
     ),
 });
 

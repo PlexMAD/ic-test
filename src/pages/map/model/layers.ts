@@ -9,7 +9,8 @@ export const buildMapLayers = ({
   metro,
   mck,
   mcd,
-  bus
+  bus,
+  isPlacing,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }: any): Layer[] => {
   return [
@@ -22,6 +23,7 @@ export const buildMapLayers = ({
       getLineColor: [37, 99, 235, 180],
       lineWidthMinPixels: 1,
       onClick: (pickingInfo) => {
+        if (isPlacing) return;
         updateGeoObjectInfo({
           kind: "district",
           info: pickingInfo.object?.properties,
@@ -35,6 +37,7 @@ export const buildMapLayers = ({
       getLineColor: [75, 85, 99, 180],
       lineWidthMinPixels: 1.5,
       onClick: (pickingInfo) => {
+        if (isPlacing) return;
         updateGeoObjectInfo({
           kind: "street",
           info: pickingInfo.object?.properties,
@@ -51,6 +54,7 @@ export const buildMapLayers = ({
       getLineColor: [255, 255, 255, 255],
       lineWidthMinPixels: 1,
       onClick: (pickingInfo) => {
+        if (isPlacing) return;
         updateGeoObjectInfo({
           kind: "train",
           info: pickingInfo.object?.properties,
@@ -67,6 +71,7 @@ export const buildMapLayers = ({
       getLineColor: [255, 255, 255, 255],
       lineWidthMinPixels: 1,
       onClick: (pickingInfo) => {
+        if (isPlacing) return;
         updateGeoObjectInfo({
           kind: "train",
           info: pickingInfo.object?.properties,
@@ -83,6 +88,7 @@ export const buildMapLayers = ({
       getLineColor: [255, 255, 255, 255],
       lineWidthMinPixels: 1,
       onClick: (pickingInfo) => {
+        if (isPlacing) return;
         updateGeoObjectInfo({
           kind: "train",
           info: pickingInfo.object?.properties,
@@ -99,6 +105,7 @@ export const buildMapLayers = ({
       getLineColor: [255, 255, 255, 255],
       lineWidthMinPixels: 1,
       onClick: (pickingInfo) => {
+        if (isPlacing) return;
         updateGeoObjectInfo({
           kind: "bus",
           info: pickingInfo.object?.properties,
